@@ -20,6 +20,8 @@
 
 package com.hello.api.controller;
 
+import com.hello.api.service.HelloService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,16 +34,28 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/api/v1")
+@RequiredArgsConstructor
 public class HelloController {
 
 
+  private final HelloService helloService;
+  
   /**
    * Get hello.
    *
    */
-  @GetMapping()
+  @GetMapping("/hello")
   public ResponseEntity<?> getHello() {
     return new ResponseEntity<>("hello", HttpStatus.OK);
+  }
+
+  /**
+   * Get hello2.
+   *
+   */
+  @GetMapping("/hello2")
+  public ResponseEntity<?> getHello2() {
+    return new ResponseEntity<>(helloService.getHello2(), HttpStatus.OK);
   }
 
 

@@ -1,3 +1,4 @@
 FROM openjdk:11
-ADD target/my-maven-docker-project.jar my-maven-docker-project.jar
+ADD target/helloApi.jar helloApi.jar
 ENTRYPOINT ["java", "-jar","helloApi.jar"]
+EXPOSE 8080

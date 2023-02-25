@@ -55,7 +55,6 @@
 	<build>
 
 
-		<finalName>aaaaa</finalName>
 
 		<plugins>
 			<plugin>
